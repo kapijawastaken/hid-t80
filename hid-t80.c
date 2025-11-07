@@ -39,8 +39,8 @@ static int t80_input_configured(struct hid_device *hdev, struct hid_input *hidin
     memset(input->keybit, 0, sizeof(input->keybit));
 
     input_set_abs_params(input, ABS_X, 0, 65535, 0, 0);
-    input_set_abs_params(input, ABS_Y, 65535, 0, 0, 0);
-    input_set_abs_params(input, ABS_Z, 65535, 0, 0, 0);
+    input_set_abs_params(input, ABS_Y, 0, 65535, 0, 0);
+    input_set_abs_params(input, ABS_Z, 0, 65535, 0, 0);
 
     __set_bit(EV_ABS, input->evbit);
     __set_bit(EV_KEY, input->evbit);
