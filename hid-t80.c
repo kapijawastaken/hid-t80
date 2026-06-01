@@ -134,10 +134,10 @@ static int t80_raw_event(struct hid_device *hdev, struct hid_report *report,
     u8 b5 = data[5], b6 = data[6], b7 = data[7], b8 = data[8], b9 = data[9];
 
     // DEBUG: Uncomment this to see what buttons do what
-     if (b5 || b6 || b7 || b8 || b9) {
+     /*if (b5 || b6 || b7 || b8 || b9) {
          hid_info(hdev, "Buttons: b5=%02x b6=%02x b7=%02x b8=%02x b9=%02x\n", 
                   b5, b6, b7, b8, b9);
-     }
+     }*/
     // Parse D-pad as hat switch
     u8 dpad = b5 & 0x0F;  // 0 = up, 1 = up+right, ..., 7 = up+left, 8 = neutral
     input_report_key(input, BTN_DPAD_UP,    dpad == 0 || dpad == 1 || dpad == 7);
